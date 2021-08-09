@@ -4,22 +4,21 @@ import Home from "./Home";
 import data from "./data.json";
 import Single from "./Single";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import React, { useState } from "react";
 
 function App() {
-  const [countries, setCountries] = useState(data);
   return (
     <Router>
       <div>
         <Switch>
           <Route exact path="/">
-            <Home countries={countries} setCountries={setCountries} />
+            <Home data={data} />
           </Route>
           <Route path="/countries/:name">
             <Single data={data} />
           </Route>
         </Switch>
       </div>
+      <h5>&copy; 2021 Adem Alagoz</h5>
     </Router>
   );
 }

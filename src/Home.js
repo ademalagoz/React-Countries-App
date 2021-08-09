@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import Countries from "./Countries";
 
-const Home = ({ countries, setCountries }) => {
+const Home = ({ data }) => {
+  const [countries, setCountries] = useState(data);
   const [search, setSearch] = useState("");
+  const [mode, setMode] = useState("");
+
   const searchHandle = (e) => {
     let searchInput = e.target.value;
     setSearch(searchInput);
@@ -10,13 +13,9 @@ const Home = ({ countries, setCountries }) => {
 
   const selectHandle = (e) => {
     const index = e.target.value;
-    const filteredRegion = countries.filter(
-      (country) => country.region === index
-    );
-    index !== "All" ? setCountries(filteredRegion) : setCountries(countries);
+    const filteredRegion = data.filter((country) => country.region === index);
+    index !== "All" ? setCountries(filteredRegion) : setCountries(data);
   };
-
-  const [mode, setMode] = useState("");
 
   const modeHandle = () => {
     mode === "" ? setMode("darkgray") : setMode("");
@@ -24,7 +23,7 @@ const Home = ({ countries, setCountries }) => {
   return (
     <body className={mode}>
       <div className="navbar">
-        <h2>Where in the world? </h2>
+        <h2>Where in the world?</h2>
         <div>
           <button onClick={modeHandle}>Mode</button>
         </div>
