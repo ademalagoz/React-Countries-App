@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Home from "./Home";
+import data from "./data.json";
+import Single from "./Single";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React, { useState } from "react";
 
 function App() {
+  const [countries, setCountries] = useState(data);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Switch>
+          <Route exact path="/">
+            <Home countries={countries} setCountries={setCountries} />
+          </Route>
+          <Route path="/countries/:name">
+            <Single data={data} />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
