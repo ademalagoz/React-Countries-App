@@ -3,16 +3,16 @@ import { Link } from "react-router-dom";
 
 const Countries = ({ countries, search }) => {
   return (
-    <div className="row">
-      {countries
-        .filter((country) =>
-          country.name.toUpperCase().includes(search.toUpperCase())
-        )
-        .map((country) => {
-          const { flag, name, population, capital, region, index } = country;
-          return (
-            <div className="col-md-3" key={index}>
-              <div className="screen">
+    <div className="container">
+      <div className="row ">
+        {countries
+          .filter((country) =>
+            country.name.toUpperCase().includes(search.toUpperCase())
+          )
+          .map((country) => {
+            const { flag, name, population, capital, region, index } = country;
+            return (
+              <div className="col-md-3" key={index}>
                 <Link to={`/countries/${name}`}>
                   <img className="flag" src={flag} alt={name} />
                 </Link>
@@ -30,9 +30,9 @@ const Countries = ({ countries, search }) => {
                   {capital}
                 </p>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+      </div>
     </div>
   );
 };

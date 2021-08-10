@@ -1,44 +1,39 @@
-.App {
-  /* text-align: center; */
-}
 .navbar{
-margin: 10px 40px 10px 40px
+  display: flex;
+  justify-content: space-around;
+  margin: 5px 50px 10px 80px
 }
 .searchSelect{
   display: flex;
   justify-content: space-between;
-  margin: 10px 40px 10px 40px
+  margin: 10px 50px 10px 80px
 }
-.screen{
 
-  background-color:rgb(182, 180, 174);
-  width: 250px;
-  margin: 5px 0px 10px 0px;
-  height: 360px
+.col-3{
+    background:rgb(241, 238, 238)
 }
 
 .flag{
-    width: 250px;
+  margin: 10px 0px 10px 0px;
+    width: 270px;
+    height: 150px;
   }
 
-.single{
-text-align: center;
-background: darkgray;
-flex-direction: row
-
+.singleAll{
+    display: flex;
+    justify-content: center;
+    text-align: center;
   }
 
-  .singleFlag{
-    width: 650px;
+.singleFlag{
+    width: 350px;
   }
 
-  .darkgray {
+.backHome{
+    display: flex;
+    margin: 10px 750px 10px 0px
+  }
+
+.darkgray {
     background:darkgray
   }
-
-
-  /* body{
-    color: #5b5757;
-    background-color: #202d236;
-
-  } */

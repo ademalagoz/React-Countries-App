@@ -24,13 +24,27 @@ const Home = ({ data }) => {
     <body className={mode}>
       <div className="navbar">
         <h2>Where in the world?</h2>
-        <div>
-          <button onClick={modeHandle}>Mode</button>
-        </div>
+        <button type="button" class="btn btn-secondary" onClick={modeHandle}>
+          Dark Mode
+        </button>
       </div>
+
       <div className="searchSelect">
-        <input value={search} onChange={searchHandle} />
-        <select onChange={selectHandle}>
+        <form className="form-inline">
+          <input
+            value={search}
+            onChange={searchHandle}
+            className="form-control mr-sm-2"
+            type="search"
+            placeholder="Search for a country"
+            aria-label="Search"
+          />
+        </form>
+        <select
+          onChange={selectHandle}
+          className="form-control"
+          style={{ width: "200px" }}
+        >
           <option value="All">Filter by Region</option>
           <option value="Africa">Africa</option>
           <option value="Americas">Americas</option>
@@ -40,11 +54,7 @@ const Home = ({ data }) => {
           <option value="Polar">Polar</option>
         </select>
       </div>
-      <div className="container">
-        <div className="row ">
-          <Countries countries={countries} search={search} />
-        </div>
-      </div>
+      <Countries countries={countries} search={search} />
     </body>
   );
 };
