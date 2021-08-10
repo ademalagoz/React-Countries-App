@@ -10,8 +10,8 @@ const Single = ({ data }) => {
   return (
     <div className="singleAll">
       <div className={mode}>
-        <button onClick={modeHandle} className="singleBtn">
-          Mode
+        <button type="button" class="btn btn-secondary" onClick={modeHandle}>
+          Dark Mode
         </button>
         <div className="single">
           {data
