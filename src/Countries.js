@@ -9,7 +9,8 @@ const Countries = ({ countries, search }) => {
           .filter((country) =>
             country.name.toUpperCase().includes(search.toUpperCase())
           )
-          .map((country) => {
+          .map(
+            (country) => {
             const { flag, name, population, capital, region, index } = country;
             return (
               <div className="col-md-3" key={index}>
